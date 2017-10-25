@@ -3,7 +3,7 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#"> - AuthAPP -</a>
+  <a class="navbar-brand" href="#">AuthAPP</a>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -13,19 +13,19 @@
         <a class="nav-link" [routerLink]="['pricing']">Pricing</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['protected']">Protected</a>
+        <a class="nav-link" [routerLink]="['protected']" *ngIf="auth.isAuthenticated()">Protected</a>
       </li>
     </ul>
     <span class="navbar-text">
     
-    <button type="button" class="btn btn-outline-primary"
-            *ngIf="!auth.isAuthenticated()"
+    <button type="button" class="btn btn-outline-primar btn-sm"
+            *ngIf="!auth.isAuthenticated()" 
             (click)="login()">
       Login
     </button>  
 
-    <button type="button" class="btn btn-outline-primary" 
-            *ngIf="auth.isAuthenticated()"
+    <button type="button" class="btn btn-outline-primary btn-sm"
+            *ngIf="auth.isAuthenticated()" 
             (click)="logout()">
         Logout
       </button> 
